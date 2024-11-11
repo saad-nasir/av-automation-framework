@@ -14,22 +14,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      # Start services for microservices testing
-      user-service:
-        image: python:3.8
-        options: --network-alias=user_service
-        env:
-          FLASK_APP: microservices/user_service.py
-        ports:
-          - 5001:5001
-        volumes:
-          - .:/app
-        commands:
-          - pip install -r /app/requirements.txt
-          - python /app/microservices/user_service.py
-      # Repeat similar blocks for other microservices if needed
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -43,6 +27,26 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Start User Service
+        run: |
+          nohup python microservices/user_service.py &
+      
+      - name: Start Product Catalog Service
+        run: |
+          nohup python microservices/product_catalog_service.py &
+      
+      - name: Start Shopping Cart Service
+        run: |
+          nohup python microservices/shopping_cart_service.py &
+      
+      - name: Start Order Processing Service
+        run: |
+          nohup python microservices/order_processing_service.py &
+      
+      - name: Start Notification Service
+        run: |
+          nohup python microservices/notification_service.py &
 
       - name: Run Unit and Integration Tests
         run: |
