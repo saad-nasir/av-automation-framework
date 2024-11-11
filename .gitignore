@@ -1,0 +1,12 @@
+# Ignore virtual environment
+pytest-env/
+
+# Ignore python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore test report artifacts
+
+# Ignore macOS system files
+.DS_Store
