@@ -84,5 +84,7 @@ jobs:
       # Step 9: Tear Down Docker Containers
       - name: Tear Down Docker Containers
         if: always()
-        run: docker-compose down
+        run: |
+          docker-compose stop
+          docker-compose rm -f
           
