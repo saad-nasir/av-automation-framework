@@ -84,4 +84,5 @@ jobs:
 
       - name: Start Locust Load Test
         run: |
-          locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://localhost:5001
+          locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://localhost:5001 --run-time 5m
+          
