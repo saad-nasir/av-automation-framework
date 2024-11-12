@@ -2,11 +2,11 @@ import pytest
 import requests
 
 # Base URLs for the microservices
-USER_SERVICE_URL = "http://localhost:5001/api"
-PRODUCT_CATALOG_URL = "http://localhost:5002/api"
-SHOPPING_CART_URL = "http://localhost:5003/api"
-ORDER_PROCESSING_URL = "http://localhost:5004/api"
-NOTIFICATION_SERVICE_URL = "http://localhost:5005/api"
+USER_SERVICE_URL = "http://user_service:5001/api"
+PRODUCT_CATALOG_URL = "http://product_catalog_service:5002/api"
+SHOPPING_CART_URL = "http://shopping_cart_service:5003/api"
+ORDER_PROCESSING_URL = "http://order_processing_service:5004/api"
+NOTIFICATION_SERVICE_URL = "http://notification_service:5005/api"
 
 ### User Service Tests ###
 def test_add_user():
