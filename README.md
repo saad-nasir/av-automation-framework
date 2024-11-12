@@ -102,8 +102,8 @@ The e-commerce application is built using the Flask framework for each microserv
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ecommerce-microservices.git
-   cd ecommerce-microservices
+   git clone https://github.com/saad-nasir/av-automation-framework.git
+   cd av-automation-framework
    ```
 
 2. Create and activate a virtual environment:
@@ -162,19 +162,3 @@ The e-commerce application is built using the Flask framework for each microserv
 
 ---
 
-## Contributing
-Feel free to open issues or submit pull requests to improve the project. Contributions are always welcome!
-
----
-
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
----
-
-## Contact
-For any questions or feedback, please contact [your-email@example.com].
-
----
-
-This README provides a detailed overview of your project, including instructions for setup, testing, and future enhancements. Let me know if you need any modifications or additional details!
