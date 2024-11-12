@@ -62,23 +62,23 @@ jobs:
         run: pip install locust
 
       - name: Run Locust Performance Test for User Service
-        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://user_service:5001 --run-time 2m
+        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://user_service:5001 --run-time 1m
         continue-on-error: true
 
       - name: Run Locust Performance Test for Product Catalog Service
-        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://product_catalog_service:5002 --run-time 2m
+        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://product_catalog_service:5002 --run-time 1m
         continue-on-error: true
 
       - name: Run Locust Performance Test for Shopping Cart Service
-        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://shopping_cart_service:5003 --run-time 2m
+        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://shopping_cart_service:5003 --run-time 1m
         continue-on-error: true
 
       - name: Run Locust Performance Test for Order Processing Service
-        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://order_processing_service:5004 --run-time 2m
+        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://order_processing_service:5004 --run-time 1m
         continue-on-error: true
 
       - name: Run Locust Performance Test for Notification Service
-        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://notification_service:5005 --run-time 2m
+        run: locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://notification_service:5005 --run-time 1m
         continue-on-error: true
 
       # Step 9: Tear Down Docker Containers

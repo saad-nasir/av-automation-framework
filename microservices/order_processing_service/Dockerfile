@@ -11,10 +11,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the current directory contents into the container
-COPY . .
+COPY microservices ./microservices
 
 # Expose the port that the service will run on
 EXPOSE 5004
 
 # Command to run the service
-CMD ["python", "order_processing_service.py"]
+CMD ["python", "microservices/order_processing_service/order_processing_service.py"]
