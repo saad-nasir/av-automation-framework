@@ -2,7 +2,7 @@
 
 # Test Automation Framework for an E-commerce Microservices Project
 
-This project is an e-commerce application built using a microservice architecture. The application includes multiple microservices for handling different parts of the e-commerce flow, such as user management, product catalog, shopping cart, order processing, and notifications. It features a robust testing framework using Pytest for unit and integration tests, Locust for performance testing, and a CI/CD pipeline implemented with GitHub Actions.
+This project is an e-commerce application built using a microservice architecture. The application includes multiple microservices for handling different parts of the e-commerce flow, such as user management, product catalog, shopping cart, order processing, and notifications. It features an automated testing framework using Pytest for unit and integration tests, Locust for performance testing, and a CI/CD pipeline implemented with GitHub Actions.
 
 ---
 
