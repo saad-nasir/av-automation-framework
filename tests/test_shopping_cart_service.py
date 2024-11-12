@@ -1,5 +1,5 @@
 import unittest
-from microservices.shopping_cart_service import app
+from microservices.shopping_cart_service.shopping_cart_service import app
 
 class ShoppingCartServiceTestCase(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,5 @@
 import unittest
-from microservices.order_processing_service import app
+from microservices.order_processing_service.order_processing_service import app
 
 class OrderProcessingServiceTestCase(unittest.TestCase):
     def setUp(self):

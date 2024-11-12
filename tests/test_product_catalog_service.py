@@ -1,5 +1,5 @@
 import unittest
-from microservices.product_catalog_service import app
+from microservices.product_catalog_service.product_catalog_service import app
 
 class ProductCatalogServiceTestCase(unittest.TestCase):
     def setUp(self):

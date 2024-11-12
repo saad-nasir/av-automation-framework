@@ -1,5 +1,5 @@
 import unittest
-from microservices.notification_service import app
+from microservices.notification_service.notification_service import app
 
 class NotificationServiceTestCase(unittest.TestCase):
     def setUp(self):
