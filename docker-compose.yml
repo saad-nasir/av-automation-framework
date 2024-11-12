@@ -3,8 +3,8 @@ version: '3.8'
 services:
   user_service:
     build:
-      context: ./microservices/user_service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./microservices/user_service/Dockerfile
     ports:
       - "5001:5001"
     environment:
@@ -14,8 +14,8 @@ services:
 
   product_catalog_service:
     build:
-      context: ./microservices/product_catalog_service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./microservices/product_catalog_service/Dockerfile
     ports:
       - "5002:5002"
     environment:
@@ -25,8 +25,8 @@ services:
 
   shopping_cart_service:
     build:
-      context: ./microservices/shopping_cart_service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./microservices/shopping_cart_service/Dockerfile
     ports:
       - "5003:5003"
     environment:
@@ -36,8 +36,8 @@ services:
 
   order_processing_service:
     build:
-      context: ./microservices/order_processing_service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./microservices/order_processing_service/Dockerfile
     ports:
       - "5004:5004"
     environment:
@@ -47,8 +47,8 @@ services:
 
   notification_service:
     build:
-      context: ./microservices/notification_service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./microservices/notification_service/Dockerfile
     ports:
       - "5005:5005"
     environment:
