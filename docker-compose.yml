@@ -56,6 +56,19 @@ services:
     networks:
       - ecommerce-network
 
+  test_service:
+    build:
+      context: .
+      dockerfile: ./docker/test/Dockerfile
+    networks:
+      - ecommerce-network
+    depends_on:
+      - user_service
+      - product_catalog_service
+      - shopping_cart_service
+      - order_processing_service
+      - notification_service
+
 networks:
   ecommerce-network:
     driver: bridge
