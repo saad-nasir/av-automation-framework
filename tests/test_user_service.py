@@ -1,5 +1,5 @@
 import unittest
-from microservices.user_service import app
+from microservices.user_service.user_service import app
 
 class UserServiceTestCase(unittest.TestCase):
     def setUp(self):
