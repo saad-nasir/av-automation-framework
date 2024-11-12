@@ -52,7 +52,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pytest tests/ --junitxml=test-reports/results.xml
+
+          pytest tests/test_user_service.py \
+                 tests/test_product_catalog_service.py \
+                 tests/test_shopping_cart_service.py \
+                 tests/test_order_processing_service.py \
+                 tests/test_notification_service.py \
+                 tests/test_services.py \
+                 --junitxml=test-reports/results.xml
         continue-on-error: true
 
       # Step 7: Archive the test results
