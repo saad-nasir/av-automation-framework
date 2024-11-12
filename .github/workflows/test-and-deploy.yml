@@ -43,6 +43,10 @@ jobs:
       - name: Start Docker Containers
         run: docker-compose up -d
 
+      # Step 6: Wait for services to be ready
+      - name: Wait for services to be ready
+        run: sleep 20
+
       # Step 6: Run Unit and Integration Tests
       - name: Run Unit and Integration Tests
         run: |
