@@ -95,4 +95,6 @@ class EcommerceUser(HttpUser):
         NotificationServiceBehavior
     ]
     wait_time = between(1, 5)  # Wait between 1 and 5 seconds between tasks
-    host = "http://localhost:5001"  # Change the port number as needed for each microservice
+
+    # Use the service names from docker-compose.yml as hostnames
+    host = "http://user_service:5001"  # Default host, change in workflow
