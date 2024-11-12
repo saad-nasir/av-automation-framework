@@ -50,7 +50,7 @@ jobs:
 
       - name: Run Unit and Integration Tests
         run: |
-          pytest --junitxml=test-reports/results.xml
+          pytest tests/ --junitxml=test-reports/results.xml
         continue-on-error: true
 
       - name: Archive Test Results
