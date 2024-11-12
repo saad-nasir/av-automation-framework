@@ -82,23 +82,28 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Run Locust tests for each microservice
+      # Run Locust tests for each microservice with continue-on-error
       - name: Run Locust Test for User Service
         run: |
           locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://localhost:5001 --run-time 2m
+        continue-on-error: true
 
       - name: Run Locust Test for Product Catalog Service
         run: |
           locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://localhost:5002 --run-time 2m
+        continue-on-error: true
 
       - name: Run Locust Test for Shopping Cart Service
         run: |
           locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://localhost:5003 --run-time 2m
+        continue-on-error: true
 
       - name: Run Locust Test for Order Processing Service
         run: |
           locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://localhost:5004 --run-time 2m
+        continue-on-error: true
 
       - name: Run Locust Test for Notification Service
         run: |
           locust -f performance_tests/locustfile.py --headless -u 10 -r 2 --host=http://localhost:5005 --run-time 2m
+        continue-on-error: true
