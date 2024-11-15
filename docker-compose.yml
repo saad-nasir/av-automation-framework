@@ -88,17 +88,12 @@ services:
     networks:
       - ecommerce-network
     depends_on:
-      - user_service:
-          condition: service_healthy
-      - product_catalog_service:
-          condition: service_healthy
-      - shopping_cart_service:
-          condition: service_healthy
-      - order_processing_service:
-          condition: service_healthy
-      - notification_service:
-          condition: service_healthy
-
+      - user_service
+      - product_catalog_service
+      - shopping_cart_service
+      - order_processing_service
+      - notification_service
+      
 networks:
   ecommerce-network:
     driver: bridge
