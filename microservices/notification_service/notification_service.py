@@ -4,6 +4,10 @@ app = Flask(__name__)
 notifications = []
 order_status_enum = ["OrderPlaced", "Processing", "Shipped", "Delivered"]
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200
+
 @app.route('/api/send-email', methods=['POST'])
 def send_email_to_user():
     data = request.get_json()

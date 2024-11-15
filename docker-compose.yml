@@ -11,6 +11,11 @@ services:
       - FLASK_ENV=testing
     networks:
       - ecommerce-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
 
   product_catalog_service:
     build:
@@ -22,6 +27,11 @@ services:
       - FLASK_ENV=testing
     networks:
       - ecommerce-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
 
   shopping_cart_service:
     build:
@@ -33,6 +43,11 @@ services:
       - FLASK_ENV=testing
     networks:
       - ecommerce-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
 
   order_processing_service:
     build:
@@ -44,6 +59,11 @@ services:
       - FLASK_ENV=testing
     networks:
       - ecommerce-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5004/health"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
 
   notification_service:
     build:
@@ -55,6 +75,11 @@ services:
       - FLASK_ENV=testing
     networks:
       - ecommerce-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005/health"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
 
   test_service:
     build:
@@ -63,11 +88,16 @@ services:
     networks:
       - ecommerce-network
     depends_on:
-      - user_service
-      - product_catalog_service
-      - shopping_cart_service
-      - order_processing_service
-      - notification_service
+      - user_service:
+          condition: service_healthy
+      - product_catalog_service:
+          condition: service_healthy
+      - shopping_cart_service:
+          condition: service_healthy
+      - order_processing_service:
+          condition: service_healthy
+      - notification_service:
+          condition: service_healthy
 
 networks:
   ecommerce-network:

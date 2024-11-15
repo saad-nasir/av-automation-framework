@@ -31,7 +31,8 @@ jobs:
         run: |
           docker-compose up -d
           # Wait for services to be ready
-          sleep 30
+          # sleep 30
+          docker-compose ps
 
       - name: Run Unit Tests
         run: |
@@ -56,6 +57,10 @@ jobs:
         with:
           name: test-results
           path: test-reports/
+
+      - name: Show service logs if tests failed
+        if: failure()
+        run: docker-compose logs
 
       - name: Tear Down Docker Containers
         if: always()
