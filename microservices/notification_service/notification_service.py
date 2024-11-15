@@ -33,4 +33,4 @@ def send_status_email(order_id, user_id, status):
         print(f"Sending {status} email to user {user_id} for order {order_id}")
 
 if __name__ == '__main__':
-    app.run(port=5005)
+    app.run(host='0.0.0.0', port=5005)

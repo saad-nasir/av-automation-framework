@@ -1,6 +1,10 @@
 # Use an official Python image as the base
 FROM python:3.8-slim
 
+# Add this after FROM
+RUN apt-get update && \
+    apt-get install -y curl && \
+    rm -rf /var/lib/apt/lists/*
 # Set the working directory
 WORKDIR /app
 
