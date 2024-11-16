@@ -30,17 +30,22 @@ jobs:
       - name: Start services with Docker Compose
         run: |
           docker-compose up -d
-          # Wait for services to be ready
-          # sleep 30
           docker-compose ps
 
       - name: Run Unit Tests
         run: |
-          pytest tests/test_*_service.py --junitxml=test-reports/unit-results.xml
+           docker-compose run --rm test_service pytest tests/test_*_service.py --junitxml=test-reports/unit-results.xml
 
       - name: Run Integration Tests
         run: |
-          pytest tests/test_services.py --junitxml=test-reports/integration-results.xml
+          docker-compose run --rm test_service pytest tests/test_services.py --junitxml=test-reports/integration-results.xml
+
+      - name: Copy Test Results
+        if: always()
+        run: |
+          mkdir -p test-reports
+          docker cp $(docker ps -aq -f name=test_service):/app/test-reports/unit-results.xml test-reports/ || true
+          docker cp $(docker ps -aq -f name=test_service):/app/test-reports/integration-results.xml test-reports/ || true
 
       - name: Generate Test Report
         uses: dorny/test-reporter@v1
