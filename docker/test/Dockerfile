@@ -20,8 +20,12 @@ COPY performance_tests/ performance_tests/
 COPY .gitignore .
 COPY README.md .
 
+# Create a wrapper script for running tests
+COPY docker/test/wait-and-test.sh /app/wait-and-test.sh
+RUN chmod +x /app/wait-and-test.sh
+
 # Expose any necessary ports (if needed for debugging)
 EXPOSE 8080
 
 # Command to run tests
-CMD ["pytest", "tests/", "--junitxml=test-reports/results.xml"]
+CMD ["./wait-and-test.sh"]

@@ -93,7 +93,7 @@ services:
       - shopping_cart_service
       - order_processing_service
       - notification_service
-    command: tail -f /dev/null
+    #command: tail -f /dev/null
 
 networks:
   ecommerce-network:

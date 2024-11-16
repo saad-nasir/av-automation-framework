@@ -6,6 +6,8 @@ __pycache__/
 *.pyc
 *.pyo
 
+#Ignore this bash script
+!docker/test/wait-and-test.sh
 # Ignore test report artifacts
 
 # Ignore macOS system files
